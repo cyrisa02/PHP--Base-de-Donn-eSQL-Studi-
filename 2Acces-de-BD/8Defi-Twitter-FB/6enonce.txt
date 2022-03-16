@@ -1,0 +1,13 @@
+Créez une classe MessageManager, qui va vous permettre de manipuler les messages en base de données. Cette classe devra posséder une instance de PDO en propriété, qui sera alimentée par injection de dépendances.
+
+Dans un premier temps, vous allez gérer l'ajout de messages : ajoutez au manager une méthode addMessage(string $content):bool permettant d'insérer un message ayant le contenu passé en paramètre en base de données. Cette méthode doit retourner « vrai » si l'insertion a bien été effectuée, et « faux » sinon.
+
+Ensuite, modifiez votre contrôleur de manière à ajouter un message à la soumission du formulaire.
+
+Enfin, ajoutez la phrase « Votre message a bien été ajouté ! » dans la vue. Ce message ne doit apparaître que si la requête a bien été exécutée. Attention : respectez bien le découpage MVC.
+
+
+« Par injection de dépendances » signifie que l'objet PDO qui sera utilisé par le manager sera renseigné dans le constructeur, au moment de la création de l'objet. L'objet PDO sera créé dans le script principal et injecté dans votre manager.
+
+
+Pour savoir si le formulaire a été soumis ou non, il est possible d'utiliser if (!empty($_POST['content'])). Cela permet également de s'assurer que le message n'est pas vide.

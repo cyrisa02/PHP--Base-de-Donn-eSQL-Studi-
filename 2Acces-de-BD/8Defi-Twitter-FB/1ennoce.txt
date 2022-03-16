@@ -1,0 +1,16 @@
+Dans cet exercice, vous allez créer votre propre fil d'actualité, à la façon de Twitter ou Facebook ! Le but est d'avoir un formulaire (composé d'un seul textarea et d'un bouton de soumission) permettant de poster des messages courts.
+Question
+
+Dans votre application, un message est composé d'un contenu textuel et d'une date (avec l'heure).
+
+Créez une table Messages permettant de gérer ces informations, en ajoutant les champs nécessaires à son optimisation. De plus, étant donné qu'à chaque création de message, la date renseignée sera la date actuelle, mettez cette valeur en valeur par défaut.
+
+Créez également une classe PHP Message représentant un message dans la base de données. Vous allez avoir besoin d'afficher leur contenu et leur date, donc ajoutez les accesseurs nécessaires.
+Indice
+
+Les dates sont gérées en tant que chaînes de caractères par PDO, donc le type du champ date de la classe Message devra être string.
+
+
+
+
+

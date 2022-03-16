@@ -1,0 +1,10 @@
+    Affichez maintenant les messages qui ont été créés : dans votre MessageManager, ajoutez une méthode getMessages(int $page) qui retourne la liste d'objets Message à afficher pour la page donnée en paramètre. Pour cet exercice, vous allez afficher les messages 10 par 10. Étant donné que vous contrôlez la quantité de données renvoyées, et donc la quantité de mémoire utilisée, la méthode fetchAll pourra être utilisée pour simplifier le code.
+
+    Créez ensuite une nouvelle vue qui va s'occuper d'afficher un message, avec son contenu et sa date. Cette nouvelle vue devra être appelée dans la vue principale.
+
+    Enfin, modifiez le contrôleur de manière à charger les messages d'une page, dont le numéro est passé en paramètre dans l'URL, et à les donner à la vue. Si le paramètre n'est pas présent dans l'URL, alors la valeur par défaut est 1.
+
+
+    Vous avez maintenant votre propre Twitter entre vos mains !
+
+N'hésitez pas à essayer d'améliorer ce code par vous-même : même si cette application est fonctionnelle, il reste malgré tout beaucoup de choses à y ajouter. Vous pourriez ajouter une liste de pages pour naviguer sans avoir à modifier l'URL, augmenter la sécurité de votre application en vous assurant que le numéro de page passé en paramètre est bien un nombre entier, améliorer le style de la page, ajouter un champ permettant de rechercher un message selon son contenu... Vous avez les connaissances nécessaires pour réaliser tout cela : la seule limite est celle de votre imagination !

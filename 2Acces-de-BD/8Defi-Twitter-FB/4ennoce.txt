@@ -1,0 +1,4 @@
+Créez un formulaire HTML composé d'un textarea et un bouton de soumission. Le formulaire devra pointer sur la même page en POST. Pour respecter le modèle MVC, mettez le code HTML dans un fichier à part, qui sera inclus dans votre script principal (qui fera office de contrôleur).
+Indice
+
+N'oubliez pas de donner un attribut name au textarea afin de pouvoir le manipuler en PHP.
