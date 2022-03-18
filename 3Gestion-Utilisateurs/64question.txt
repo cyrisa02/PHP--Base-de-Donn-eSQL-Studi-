@@ -1,0 +1,5 @@
+Ajoutez une méthode connect à votre UserManager. Cette méthode doit prendre en paramètres un login et un mot de passe et doit retourner le User correspondant. Si aucun utilisateur n'est trouvé, alors cette méthode doit lancer une exception.
+
+Connectez-vous ensuite en tant que l'utilisateur précédemment créé pour tester votre fonction : affichez Bonjour, suivi de son nom et de son prénom. Pour cela, créez une méthode sayHello dans la classe User permettant de retourner la phrase à afficher.
+
+N'oubliez pas d'inclure la classe User là où vous en avez besoin.

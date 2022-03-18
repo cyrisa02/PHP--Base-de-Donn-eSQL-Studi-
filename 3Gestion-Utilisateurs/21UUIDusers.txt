@@ -1,0 +1,10 @@
+CREATE TABLE users
+(
+    id CHAR(36) NOT NULL PRIMARY KEY
+);
+
+INSERT INTO users VALUES (UUID());
+
+Différence: CHAR sur 36 caractères + (UUID())
+résoud le pbm si deux création en même temps sur 2 serveurs différents 
+L'ID peut donner des indications sur le contenu de la table, car ils sont prévisibles

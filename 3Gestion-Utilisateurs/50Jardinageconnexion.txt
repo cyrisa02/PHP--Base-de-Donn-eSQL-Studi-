@@ -1,0 +1,34 @@
+Une entreprise de vente d'outils de jardinage dispose d'une application permettant de gérer ses vendeurs et ses ventes (dont le prix est stocké en centimes). Le schéma de la base de données est celui-ci :
+
+CREATE TABLE users (
+  id CHAR(36) NOT NULL PRIMARY KEY,
+  email varchar(254) UNIQUE NOT NULL,
+  username varchar(20) NOT NULL,
+  password varchar(60) NOT NULL
+);
+
+CREATE TABLE sales (
+  id CHAR(36) NOT NULL PRIMARY KEY,
+  idUser CHAR(36) NOT NULL,
+  price INT(11) NOT NULL
+);
+
+INSERT INTO users (id, email, username, password) VALUES
+('2a2b8dc9-cc29-11ea-b05e-1831bf21e339', 'dupond@monmail.com', 'rodupond', '$2y$10$vEx3REIRj.omkixkE2IMruhroKKA0Lzz/xtL6fFQQ.9irK55DaLsK'),
+('2a2b9b27-cc29-11ea-b05e-1831bf21e339', 'laure@mondi.com', 'laure', '$2y$10$wbiuoUtEJ8FYUYjaG.x5Qe1NGX0VaU61XFqFxOh9LFqvqIwHu2qbS');
+
+INSERT INTO sales (id, idUser, price) VALUES
+(UUID(), '2a2b8dc9-cc29-11ea-b05e-1831bf21e339', 10000),
+(UUID(), '2a2b8dc9-cc29-11ea-b05e-1831bf21e339', 20000),
+(UUID(), '2a2b8dc9-cc29-11ea-b05e-1831bf21e339', 1000),
+(UUID(), '2a2b9b27-cc29-11ea-b05e-1831bf21e339', 1000),
+(UUID(), '2a2b8dc9-cc29-11ea-b05e-1831bf21e339', 32000),
+(UUID(), '2a2b8dc9-cc29-11ea-b05e-1831bf21e339', 64000),
+(UUID(), '2a2b9b27-cc29-11ea-b05e-1831bf21e339', 12000),
+(UUID(), '2a2b9b27-cc29-11ea-b05e-1831bf21e339', 13000);
+
+
+L'entreprise voudrait ajouter une nouvelle page dans l'application, qui ne serait accessible que par les vendeurs « senior »,c'est-à-dire aux vendeurs qui ont vendu pour plus de 1000 € de produits dans leur carrière. Pour vous aider, voici le script permettant de connecter un utilisateur :
+
+
+Modifiez le code de manière à calculer le rôle de l'utilisateur (ROLE_JUNIOR ou ROLE_SENIOR) au moment de la connexion, puis complétez la page index.php pour qu'elle ne soit accessible que par les vendeurs senior.

@@ -1,0 +1,7 @@
+Créez un UserManager qui va vous permettre de manipuler les utilisateurs en base de données. Cette classe devra comporter une méthode subscribe prenant en paramètres toutes les informations nécessaires à la création d'un utilisateur et qui retourne vrai si l'utilisateur a pu être inséré en base de données, faux sinon. Pour cela, une instance de PDO devra être fournie au manager par injection de dépendances.
+
+Pour simplifier la question, la seule vérification à réaliser sur le mot de passe doit être sa taille, supérieure à 7 caractères. Il ne sera pas nécessaire de vérifier les autres données. Le mot de passe devra être hashé en utilisant l'algorithme BCRYPT.
+
+Créez ensuite un utilisateur de votre choix dans le fichier index.php
+
+Pour le moment, il n'est pas utile d'utiliser la classe User.

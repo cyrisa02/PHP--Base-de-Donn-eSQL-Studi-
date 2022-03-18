@@ -1,0 +1,8 @@
+Le restaurant souhaite également proposer à ses clients un service de plats en livraison. Cependant, le restaurant n'est pas capable de livrer dans toute la France, donc cette fonctionnalité doit être limitée aux départements 75, 94, 92 et 93.
+
+Modifiez votre code de manière à ce que seuls les clients de ces départements aient le droit d'accéder à la page du service de livraison.
+
+
+Le but de l'exercice est de créer un rôle (ROLE_DELIVERABLE, par exemple) et de le déterminer au moment de la connexion.
+
+La fonction in_array peut également être utile pour gérer les départements.

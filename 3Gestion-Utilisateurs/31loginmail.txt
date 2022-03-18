@@ -1,0 +1,8 @@
+CREATE TABLE users
+(
+    email VARCHAR(254) NOT NULL UNIQUE,
+    username VARCHAR(20) NOT NULL
+);
+
+
+L'unicité du login est parfois frustrante pour les utilisateurs, qui ne peuvent pas utiliser leur pseudonyme habituel. Pour pallier ce problème, une adresse e-mail est un très bon candidat pour un login

@@ -1,0 +1,50 @@
+Une entreprise de transports en commun spécialisée dans les trajets en bus souhaiterait informatiser son système. Pour cela, ils ont besoin d'une base de données MariaDB permettant de gérer leurs véhicules et leurs conducteurs.
+
+    Un véhicule est composé d'une plaque d'immatriculation (sur 9 caractères) et d'une marque.
+
+    Un conducteur possède un nom et un prénom.
+
+    Le manager organise les voyages : un conducteur est assigné à un véhicule pour une certaine date.
+
+L'entreprise possède plusieurs bureaux dans des villes différentes. Pour le moment, chaque bureau va posséder sa propre instance de l'application, sur des bases de données séparées. Cependant, le but de l'entreprise, à long terme, est de fusionner toutes les données dans une seule base, mais cela représente un coût trop élevé pour le moment.
+
+À partir de ces informations, créez un schéma de base de données correspondant aux attentes de l'entreprise. Vous êtes libre de rajouter autant de champs que vous le souhaitez.
+
+La plaque d'immatriculation n'est pas une bonne clé primaire : elle peut changer.
+
+Le fait que l'entreprise veuille fusionner les données en une seule base est une forte indication des bénéfices de l'UUID sur l'auto-incrémentation.
+
+Le fait que l'entreprise ait pour but à long terme de fusionner les informations des différentes bases de données indique que nous allons devoir utiliser des UUID en clé primaire. En effet, en utilisant des entiers auto-incrémentés, il va y avoir plusieurs véhicules n°1 répartis sur les différentes bases. Au moment de la fusion, il va donc falloir faire un lourd processus de changement des identifiants.
+
+CREATE TABLE vehicles
+(
+    -- MariaDB ne possède pas de type UUID, donc l'identifiant est un CHAR(36)
+    id CHAR(36) NOT NULL PRIMARY KEY,
+    licensePlate VARCHAR(10) NOT NULL,
+    brand VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE drivers
+(
+    id CHAR(36) NOT NULL PRIMARY KEY,
+    firstName VARCHAR(100) NOT NULL,
+    lastName VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE trips
+(
+    id CHAR(36) NOT NULL PRIMARY KEY,
+    vehicleId CHAR(36) NOT NULL,
+    driverId CHAR(36) NOT NULL,
+    date DATETIME NOT NULL,
+    FOREIGN KEY (vehicleId) REFERENCES vehicles(id),
+    FOREIGN KEY (driverId) REFERENCES drivers(id)
+);
+
+
+Rédigez les requêtes SQL permettant d'insérer un véhicule et un conducteur de votre choix.
+
+La fonction UUID() permet de générer des UUID sur MariaDB.
+
+INSERT INTO vehicles VALUES (UUID(), 'XX-123-XX', 'SuperBus');
+INSERT INTO drivers VALUES (UUID(), 'John', 'Doe');
